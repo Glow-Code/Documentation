@@ -1,0 +1,37 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-02-05T11:30:02.263176"><title>Balance | Glow developer documentation</title><script type="application/json" id="virtual-toc-data">[{"id":"endpoint","level":0,"title":"Endpoint","anchor":"#endpoint"},{"id":"response","level":0,"title":"Response","anchor":"#response"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="site.webmanifest"><meta name="msapplication-TileColor" content="#000000"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Balance | Glow developer documentation"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Glow developer documentation Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="/ad/1.0/balance.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Balance | Glow developer documentation"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "/ad/1.0/balance.html#webpage",
+    "url": "/ad/1.0/balance.html",
+    "name": "Balance | Glow developer documentation",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "/ad/#website",
+    "url": "/ad/",
+    "name": "Glow developer documentation Help"
+}</script><!-- End Schema.org --></head><body data-id="Balance" data-main-title="Balance" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs=""><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Glow developer documentation 1.0 Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Balance" id="Balance.md">Balance</h1><p id="b9be9ac5_2">This endpoint allows you to check the balance of your account's wallet.</p><section class="chapter"><h2 id="endpoint" data-toc="endpoint">Endpoint</h2><div class="code-block" data-lang="http">
+GET https://glow.net/api/v1.0/balances
+</div></section><section class="chapter"><h2 id="response" data-toc="response">Response</h2><div class="code-block" data-lang="json">
+{
+    &quot;data&quot;: [
+        {
+            &quot;currency&quot;: &quot;GBP&quot;,
+            &quot;amount&quot;: &quot;2000&quot;,
+            &quot;amount_decimal&quot;: &quot;20.00&quot;,
+            &quot;formatted_amount&quot;: &quot;£20.00&quot;,
+            &quot;updated_at&quot;: &quot;2023-01-01 00:00:00&quot;
+        },
+        {
+            &quot;currency&quot;: &quot;USD&quot;,
+            &quot;amount&quot;: &quot;2000&quot;,
+            &quot;amount_decimal&quot;: &quot;20.00&quot;,
+            &quot;formatted_amount&quot;: &quot;$20.00&quot;,
+            &quot;updated_at&quot;: &quot;2023-01-01 00:00:00&quot;
+        }
+    ]
+}
+</div><div class="table-wrapper"><table class="wide" id="b9be9ac5_5"><thead><tr class="ijRowHead" id="b9be9ac5_6"><th id="b9be9ac5_7"><p>Field</p></th><th id="b9be9ac5_8"><p>Type</p></th><th id="b9be9ac5_9"><p>Description</p></th></tr></thead><tbody><tr id="b9be9ac5_10"><td id="b9be9ac5_11"><p>currency</p></td><td id="b9be9ac5_12"><p>string</p></td><td id="b9be9ac5_13"><p>The currency of the balance</p></td></tr><tr id="b9be9ac5_14"><td id="b9be9ac5_15"><p>amount</p></td><td id="b9be9ac5_16"><p>string</p></td><td id="b9be9ac5_17"><p>The amount of the balance in the currencies smallest unit</p></td></tr><tr id="b9be9ac5_18"><td id="b9be9ac5_19"><p>amount_decimal</p></td><td id="b9be9ac5_20"><p>string</p></td><td id="b9be9ac5_21"><p>The amount of the balance as a decimal</p></td></tr><tr id="b9be9ac5_22"><td id="b9be9ac5_23"><p>formatted_amount</p></td><td id="b9be9ac5_24"><p>string</p></td><td id="b9be9ac5_25"><p>The amount of the balance formatted as a string with symbol</p></td></tr><tr id="b9be9ac5_26"><td id="b9be9ac5_27"><p>updated_at</p></td><td id="b9be9ac5_28"><p>object</p></td><td id="b9be9ac5_29"><p>The date and time the balance was last updated</p></td></tr></tbody></table></div></section><div class="last-modified">Last modified: 05 February 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="pagination.html" class="navigation-links__prev">Pagination</a><a href="section-starting-page.html" class="navigation-links__next">Gift cards</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>

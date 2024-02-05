@@ -1,0 +1,432 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "glow",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https:\/\/rewards.test\/api"
+        }
+    ],
+    "security": [
+        {
+            "http": []
+        }
+    ],
+    "paths": {
+        "\/v1.0\/buy\/balances": {
+            "get": {
+                "operationId": "balances",
+                "summary": "Balances",
+                "tags": [
+                    "Balance"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "`BalanceCollection`",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/BalanceCollection"
+                                        }
+                                    },
+                                    "required": [
+                                        "data"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/v1.0\/buy\/giftcards\/buy": {
+            "post": {
+                "operationId": "giftcards.buy",
+                "tags": [
+                    "Gift Cards",
+                    "GiftCardBuy"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "value": {
+                                        "type": "integer",
+                                        "description": "The value of the gift card to be purchased. Provide value in the smallest unit. 1000 = \u00a310.00",
+                                        "minimum": 1,
+                                        "maximum": 50000
+                                    },
+                                    "brand_id": {
+                                        "type": "string",
+                                        "description": "The brand of the gift card to be purchased."
+                                    },
+                                    "currency": {
+                                        "type": "string",
+                                        "description": "The currency of the gift card to be purchased."
+                                    },
+                                    "idempotency_key": {
+                                        "type": "string",
+                                        "description": "A key that must be unique per giftcard, used to prevent duplicate orders"
+                                    }
+                                },
+                                "required": [
+                                    "value",
+                                    "brand_id",
+                                    "currency",
+                                    "idempotency_key"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "url": {
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "url",
+                                        "id"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "402": {
+                        "description": "An error",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Error overview.",
+                                            "example": "Balance is not sufficient for this operation"
+                                        }
+                                    },
+                                    "required": [
+                                        "message"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/ValidationException"
+                    },
+                    "403": {
+                        "$ref": "#\/components\/responses\/AuthorizationException"
+                    }
+                }
+            }
+        },
+        "\/v1.0\/buy\/giftcards\/send": {
+            "post": {
+                "operationId": "giftcards.send",
+                "description": "Send a gift card directly to a user or email address.",
+                "summary": "Send gift card",
+                "tags": [
+                    "Gift Cards",
+                    "GiftCardSend"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "value": {
+                                        "type": "integer",
+                                        "description": "The value of the gift card to be purchased. Provide value in the smallest unit. 1000 = \u00a310.00",
+                                        "example": 1000,
+                                        "minimum": 1,
+                                        "maximum": 250000
+                                    },
+                                    "template_id": {
+                                        "type": "string",
+                                        "description": "Template to be used to display the giftcard",
+                                        "example": "9af0e1ce-c130-4aac-83dc-4144d2b1591b"
+                                    },
+                                    "recipient_email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "description": "If using the delivered purchase type, email address is required"
+                                    },
+                                    "idempotency_key": {
+                                        "type": "string",
+                                        "description": "A key that must be unique per giftcard, used to prevent duplicate orders",
+                                        "example": "unique_key_1"
+                                    }
+                                },
+                                "required": [
+                                    "value",
+                                    "template_id",
+                                    "recipient_email",
+                                    "idempotency_key"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "id"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "402": {
+                        "description": "An error",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Error overview.",
+                                            "example": "Balance is not sufficient for this operation"
+                                        }
+                                    },
+                                    "required": [
+                                        "message"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/ValidationException"
+                    },
+                    "403": {
+                        "$ref": "#\/components\/responses\/AuthorizationException"
+                    }
+                }
+            }
+        },
+        "\/v1.0\/buy\/team": {
+            "get": {
+                "operationId": "team",
+                "description": "Get information about the team the API token belongs to.",
+                "summary": "Team",
+                "tags": [
+                    "Team"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "`TeamResource`",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/TeamResource"
+                                        }
+                                    },
+                                    "required": [
+                                        "data"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "http": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": ""
+            }
+        },
+        "schemas": {
+            "BalanceCollection": {
+                "type": "array",
+                "items": {
+                    "$ref": "#\/components\/schemas\/BalanceResource"
+                },
+                "title": "BalanceCollection"
+            },
+            "BalanceResource": {
+                "type": "object",
+                "properties": {
+                    "currency": {
+                        "type": "string"
+                    },
+                    "amount": {
+                        "type": "string"
+                    },
+                    "amount_decimal": {
+                        "type": "string"
+                    },
+                    "formatted_amount": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": [
+                            "object",
+                            "null"
+                        ]
+                    }
+                },
+                "required": [
+                    "currency",
+                    "amount",
+                    "amount_decimal",
+                    "formatted_amount",
+                    "updated_at"
+                ],
+                "title": "BalanceResource"
+            },
+            "TeamResource": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "website_url": {
+                        "type": "string"
+                    },
+                    "default_currency": {
+                        "type": "string"
+                    },
+                    "address_line_1": {
+                        "type": "string"
+                    },
+                    "address_line_2": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "address_city": {
+                        "type": "string"
+                    },
+                    "address_town": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "address_postcode": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": [
+                            "object",
+                            "null"
+                        ]
+                    },
+                    "updated_at": {
+                        "type": [
+                            "object",
+                            "null"
+                        ]
+                    }
+                },
+                "required": [
+                    "id",
+                    "name",
+                    "website_url",
+                    "default_currency",
+                    "address_line_1",
+                    "address_line_2",
+                    "address_city",
+                    "address_town",
+                    "address_postcode",
+                    "created_at",
+                    "updated_at"
+                ],
+                "title": "TeamResource"
+            }
+        },
+        "responses": {
+            "ValidationException": {
+                "description": "Validation error",
+                "content": {
+                    "application\/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string",
+                                    "description": "Errors overview."
+                                },
+                                "errors": {
+                                    "type": "object",
+                                    "description": "A detailed description of each field that failed validation.",
+                                    "additionalProperties": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "required": [
+                                "message",
+                                "errors"
+                            ]
+                        }
+                    }
+                }
+            },
+            "AuthorizationException": {
+                "description": "Authorization error",
+                "content": {
+                    "application\/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string",
+                                    "description": "Error overview."
+                                }
+                            },
+                            "required": [
+                                "message"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

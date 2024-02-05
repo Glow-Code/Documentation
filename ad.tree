@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+    SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="ad"
+                  name="Glow developer documentation"
+                  start-page="Overview.md">
+    <toc-element topic="Overview.md"/>
+    <toc-element topic="Sandbox.md"/>
+    <toc-element topic="Pagination.md"/>
+    <toc-element topic="Balance.md"/>
+    <toc-element topic="Section-Starting-Page.topic">
+        <toc-element topic="Gift-card-object.md"/>
+        <toc-element topic="Sending-a-gift-card.md"/>
+        <toc-element topic="Listing-gift-cards.md"/>
+        <toc-element topic="Get-gift-card.md"/>
+    </toc-element>
+</instance-profile>

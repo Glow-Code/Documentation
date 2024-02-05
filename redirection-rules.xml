@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rules SYSTEM "https://resources.jetbrains.com/writerside/1.0/redirection-rules.dtd">
+<rules>
+    <!-- format is as follows
+    <rule id="<unique id>">
+        <accepts>page.html</accepts>
+    </rule>
+    -->
+    <rule id="6c326d3f">
+        <description>Created after removal of "Reference" from Glow developer documentation</description>
+        <accepts>Reference.html</accepts>
+    </rule>
+    <rule id="7be6c84f">
+        <description>Created after removal of "Overview" from Glow developer documentation</description>
+        <accepts>Overviewlll.html</accepts>
+    </rule>
+    <rule id="79505f1a">
+        <description>Created after removal of "Starter" from Glow developer documentation</description>
+        <accepts>Starter.html</accepts>
+    </rule>
+    <rule id="2a44c095">
+        <description>Created after removal of "Title" from Glow developer documentation</description>
+        <accepts>Sending-a-Gift-Card.html</accepts>
+    </rule>
+    <rule id="56e30939">
+        <description><![CDATA[Created after removal of "<getting-started.md>" from Glow developer documentation]]></description>
+        <accepts>getting-started.html</accepts>
+    </rule>
+    <rule id="2023ca44">
+        <description>Created after removal of "Gift Cards" from Glow developer documentation</description>
+        <accepts>Gift-Cards.html</accepts>
+    </rule>
+    <rule id="735cbf21">
+        <description>Created after removal of "Gift card types" from Glow developer documentation</description>
+        <accepts>Gift-card-types.html</accepts>
+    </rule>
+    <rule id="17f3dfd5">
+        <description>Created after removal of "Direct gift card" from Glow developer documentation</description>
+        <accepts>Buying-a-Gift-Card.html</accepts>
+    </rule>
+</rules>
