@@ -1,6 +1,7 @@
 # Purchase a gift card
 
-> Please read the following documentation carefully to understand the different types of gift cards that available for purchase as well as the different delivery methods we support.
+> Please read the following documentation carefully to understand the different types of gift cards that available for
+> purchase as well as the different delivery methods we support.
 >
 {style="warning"}
 
@@ -13,17 +14,20 @@ Direct gift card
 : Direct gift cards are fixed to a specific brand and value.
 
 Recipient choice gift {id="recipient-choice"}
-: The recipient is able to split their gift card value across multiple brands. The sender defines the available brands and the currency of the gift card by creating a template inside their account.
+: The recipient is able to split their gift card value across multiple brands. The sender defines the available brands
+and the currency of the gift card by creating a template inside their account.
 
 ## Delivery methods
 
 {type="medium" sorted="desc"}
 Redemption URL
-: Keep the email address and mobile number empty if you want to deliver the gift card to the recipient yourself. You will receive a redemption URL in the response that you can provide to the
+: Keep the email address and mobile number empty if you want to deliver the gift card to the recipient yourself. You
+will receive a redemption URL in the response that you can provide to the
 recipient.
 
 Sent directly
-: Provide an email address and or mobile number if you want to leave delivery of the gift card to us. We will automatically send the gift card to the recipient details you provide.
+: Provide an email address and or mobile number if you want to leave delivery of the gift card to us. We will
+automatically send the gift card to the recipient details you provide.
 
 ## Request
 
@@ -41,16 +45,17 @@ You define the available brands and the currency of the gift card by creating a 
 
 ```json
 {
-    "type": "recipient_choice",
-    "value": 1000,
-    "template_id": "9af0e1ce-c130-4aac-83dc-4144d2b1591b",
-    "recipient_email": "user@example.com",
-    "recipient_mobile_number": "+440000000000",
-    "idempotency_key": "unique_key_1"
+  "type": "recipient_choice",
+  "value": 1000,
+  "template_id": "9af0e1ce-c130-4aac-83dc-4144d2b1591b",
+  "recipient_email": "user@example.com",
+  "recipient_mobile_number": "+440000000000",
+  "idempotency_key": "unique_key_1"
 }
 ```
 
-> Exclude the `recipient_email` and `recipient_mobile_number` if you want to deliver the gift card to the recipient yourself.
+> Exclude the `recipient_email` and `recipient_mobile_number` if you want to deliver the gift card to the recipient
+> yourself.
 
 ### Example request payload - Direct
 
@@ -58,23 +63,23 @@ You need to provide the ID of the brand you want to create this gift card for as
 
 ```json
 {
-    "type": "direct",
-    "value": 1000,
-    "recipient_email": "user@example.com",
-    "recipient_mobile_number": "+440000000000",
-    "idempotency_key": "unique_key_1",
-    "brand_id": "9af0e1ce-c130-4aac-83dc-4144d2b1591b",
-    "currency": "GBP"
+  "type": "direct",
+  "value": 1000,
+  "recipient_email": "user@example.com",
+  "recipient_mobile_number": "+440000000000",
+  "idempotency_key": "unique_key_1",
+  "brand_id": "9af0e1ce-c130-4aac-83dc-4144d2b1591b",
+  "currency": "GBP"
 }
 ```
 
-> Exclude the `recipient_email` and `recipient_mobile_number` if you want to deliver the gift card to the recipient yourself.
+> Exclude the `recipient_email` and `recipient_mobile_number` if you want to deliver the gift card to the recipient
+> yourself.
 
 ## Response
-
-> This endpoint will return a [gift card object](Gift-card-object.md).
 
 > The `redemption_url` is the URL you can use to direct the user to redeem the gift card.
 > The attributes in this object are the same provided in all giftcard responses.
 >
-{style="note"}
+
+<include from="Gift-card-object.md" element-id="gift-card-object"></include>

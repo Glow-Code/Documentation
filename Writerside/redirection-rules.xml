@@ -23,7 +23,8 @@
         <accepts>Sending-a-Gift-Card.html</accepts>
     </rule>
     <rule id="56e30939">
-        <description><![CDATA[Created after removal of "<getting-started.md>" from Glow developer documentation]]></description>
+        <description>
+            <![CDATA[Created after removal of "<getting-started.md>" from Glow developer documentation]]></description>
         <accepts>getting-started.html</accepts>
     </rule>
     <rule id="2023ca44">
@@ -37,5 +38,9 @@
     <rule id="17f3dfd5">
         <description>Created after removal of "Direct gift card" from Glow developer documentation</description>
         <accepts>Buying-a-Gift-Card.html</accepts>
+    </rule>
+    <rule id="644e499f">
+        <description>Created after removal of "Example" from Glow developer documentation</description>
+        <accepts>Example.html</accepts>
     </rule>
 </rules>

@@ -1,6 +1,6 @@
 # Get gift card
 
-Get a gift card by its ID.
+Get a previously purchased gift card by its ID.
 
 ## Endpoint
 
@@ -10,6 +10,4 @@ POST %url%gift-cards/{id}
 
 ## Response
 
-> This endpoint will return a single [gift card object](Gift-card-object.md).
->
-> If the gift card does not exist, the API will return a `404 Not Found` error.
+<include from="Gift-card-object.md" element-id="gift-card-object"/>

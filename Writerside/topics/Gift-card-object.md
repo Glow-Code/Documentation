@@ -1,26 +1,29 @@
 # Gift card object
 
-The gift card object is the same format when returned from any endpoint that returns a gift card. The gift card object has the following structure:
+The gift card object is the same format when returned from any endpoint that returns a gift card. The gift card object
+has the following structure:
+
+<snippet id="gift-card-object">
 
 ```json
 {
-    "data": {
-        "id": "9b3de229-fbe0-4e33-b5ac-cb3f6003d471",
-        "value": {
-            "amount": "1000",
-            "currency": "GBP",
-            "formatted": "£10.00"
-        },
-        "issue_fee": null,
-        "type": "recipient_choice",
-        "email_address": null,
-        "mobile_number": null,
-        "idempotency_key": "9af0e1ce-c130-4aac-83dc-4144d2b1591a-unique_key_22222",
-        "created_at": "2024-02-02T19:08:17.000000Z",
-        "updated_at": "2024-02-02T19:08:17.000000Z",
-        "redemption_url": "https://url",
-        "cards": []
-    }
+  "data": {
+    "id": "9b3de229-fbe0-4e33-b5ac-cb3f6003d471",
+    "value": {
+      "amount": "1000",
+      "currency": "GBP",
+      "formatted": "£10.00"
+    },
+    "issue_fee": null,
+    "type": "recipient_choice",
+    "email_address": null,
+    "mobile_number": null,
+    "idempotency_key": "9af0e1ce-c130-4aac-83dc-4144d2b1591a-unique_key_22222",
+    "created_at": "2024-02-02T19:08:17.000000Z",
+    "updated_at": "2024-02-02T19:08:17.000000Z",
+    "redemption_url": "https://url",
+    "cards": []
+  }
 }
 ```
 
@@ -96,3 +99,6 @@ The type of the gift card.
         <td>An array of child gift cards associated with the gift card. This is the case when a gift card has been split into multiple gift cards.</td>
     </tr>
 </table>
+
+
+</snippet>
