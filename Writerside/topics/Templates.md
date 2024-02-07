@@ -1,3 +1,0 @@
-# Templates
-
-Start typing here...
