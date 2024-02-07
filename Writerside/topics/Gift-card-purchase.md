@@ -57,6 +57,11 @@ You define the available brands and the currency of the gift card by creating a 
 > Exclude the `recipient_email` and `recipient_mobile_number` if you want to deliver the gift card to the recipient
 > yourself.
 
+> The value of the gift card needs to be supported by the template you are using. You can see the available
+> denominations on the template object. [Read more](Template-object.md#allowed_denominations)
+>
+{style="warning"}
+
 ### Example request payload - Direct
 
 You need to provide the ID of the brand you want to create this gift card for as well as a currency.
@@ -75,6 +80,11 @@ You need to provide the ID of the brand you want to create this gift card for as
 
 > Exclude the `recipient_email` and `recipient_mobile_number` if you want to deliver the gift card to the recipient
 > yourself.
+
+> The value of the gift card needs to be supported by the brand you are using. You can see the available
+> denominations on the brand object. [Read more](Brand-object.md#allowed_denominations)
+>
+{style="warning"}
 
 ## Response
 

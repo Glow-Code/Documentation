@@ -10,9 +10,19 @@
     <toc-element topic="Pagination.md"/>
     <toc-element topic="Balance.md"/>
     <toc-element topic="Section-Starting-Page.topic">
-        <toc-element topic="Get-gift-card.md"/>
-        <toc-element topic="Gift-card-object.md" hidden="true"/>
-        <toc-element topic="Sending-a-gift-card.md"/>
-        <toc-element topic="Listing-gift-cards.md"/>
+        <toc-element topic="Gift-cards.md">
+            <toc-element topic="Gift-card-list.md"/>
+            <toc-element topic="Gift-card-purchase.md"/>
+            <toc-element topic="Gift-card-object.md"/>
+            <toc-element topic="Gift-get.md"/>
+        </toc-element>
+        <toc-element topic="Templates.md">
+            <toc-element topic="Get-templates.md"/>
+            <toc-element topic="Template-object.md"/>
+        </toc-element>
+        <toc-element topic="Brands.md">
+            <toc-element topic="Listing-brands.md"/>
+            <toc-element topic="Brand-object.md"/>
+        </toc-element>
     </toc-element>
 </instance-profile>
