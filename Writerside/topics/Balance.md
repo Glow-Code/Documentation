@@ -12,22 +12,74 @@ GET %url%balances
 
 ```json
 {
-    "data": [
-        {
+  "data": [
+    {
+      "currency": "GBP",
+      "amount": "-75000",
+      "amount_decimal": "-750.00",
+      "formatted_amount": "(£750.00)",
+      "updated_at": "2024-03-06T21:49:02.000000Z",
+      "limits": {
+        "daily": {
+          "limit": {
+            "amount": "100000",
             "currency": "GBP",
-            "amount": "2000",
-            "amount_decimal": "20.00",
-            "formatted_amount": "£20.00",
-            "updated_at": "2023-01-01 00:00:00"
+            "formatted": "£1,000.00"
+          },
+          "remaining": {
+            "amount": "25000",
+            "currency": "GBP",
+            "formatted": "£250.00"
+          }
         },
-        {
-            "currency": "USD",
-            "amount": "2000",
-            "amount_decimal": "20.00",
-            "formatted_amount": "$20.00",
-            "updated_at": "2023-01-01 00:00:00"
+        "monthly": {
+          "limit": {
+            "amount": "100000",
+            "currency": "GBP",
+            "formatted": "£1,000.00"
+          },
+          "remaining": {
+            "amount": "25000",
+            "currency": "GBP",
+            "formatted": "£250.00"
+          }
         }
-    ]
+      }
+    },
+    {
+      "currency": "USD",
+      "amount": "0",
+      "amount_decimal": "0.00",
+      "formatted_amount": "$0.00",
+      "updated_at": "2024-03-05T21:58:08.000000Z",
+      "limits": {
+        "daily": {
+          "limit": {
+            "amount": "100000",
+            "currency": "USD",
+            "formatted": "$1,000.00"
+          },
+          "remaining": {
+            "amount": "25000",
+            "currency": "USD",
+            "formatted": "$250.00"
+          }
+        },
+        "monthly": {
+          "limit": {
+            "amount": "100000",
+            "currency": "USD",
+            "formatted": "$1,000.00"
+          },
+          "remaining": {
+            "amount": "25000",
+            "currency": "USD",
+            "formatted": "$250.00"
+          }
+        }
+      }
+    }
+  ]
 }
 ```
 
@@ -61,5 +113,10 @@ GET %url%balances
         <td>updated_at</td>
         <td>object</td>
         <td>The date and time the balance was last updated</td>
+    </tr>
+    <tr>
+        <td>limits</td>
+        <td>object</td>
+        <td>Accounts are protected from excessive spending by account limits, the limit object contains the limit and remaining limit allowance.</td>
     </tr>
 </table>
