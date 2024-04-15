@@ -2,5 +2,6 @@
 <!DOCTYPE vars SYSTEM "https://resources.jetbrains.com/writerside/1.0/vars.dtd">
 <vars>
     <var name="product" value="Glow"/>
-    <var name="url" value="https://glow.net/api/v1.0/"/>
+    <var name="url" value="https://api.glowstaging.com/api/v1.0/"/>
+    <var name="url_sandbox" value="https://sandbox.api.glowstaging.com/api/v1.0/"/>
 </vars>

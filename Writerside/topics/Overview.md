@@ -1,7 +1,7 @@
 # Authentication
 
 To securely access Glow's APIs, we use a method called Bearer Token Authentication. You can obtain a Bearer token from the developer section of your account. Once you have a token, you can use it to
-access our APIs.:
+access our APIs:
 
 ```Authorization: Bearer <token>```
 

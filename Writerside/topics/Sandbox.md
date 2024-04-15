@@ -6,7 +6,7 @@ affecting your live account or occurring any costs.
 To make use of the sandbox environment, you need to use the following URL:
 
 ```http
-https://sandbox.glow.net/api/v1/
+%url_sandbox%
 ```
 
 You will need to create a token for the sandbox environment. You can do this by visiting the developer section of your account and creating a new token. Once you have a token, you can use it to access
@@ -17,7 +17,7 @@ the sandbox environment.
 Once you are ready to go live, you can switch to the live environment by using the following URL:
 
 ```http
-https://api.glow.net/api/v1/
+%url%
 ```
 
 You will need to create a new token for the live environment. You can do this by visiting the developer section of your account and creating a new token.
